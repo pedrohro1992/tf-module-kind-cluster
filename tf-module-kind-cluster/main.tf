@@ -21,7 +21,7 @@ resource "kind_cluster" "this" {
       dynamic "extra_port_mappings" {
         for_each = var.enable_ingress_ports ? [
         { container = 30080, host = 80 },
-        { container = 300443, host = 443 },
+        { container = 30443, host = 443 },
         ] : []
 
         content {
