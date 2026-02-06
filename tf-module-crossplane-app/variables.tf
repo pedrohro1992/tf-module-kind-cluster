@@ -4,6 +4,17 @@ variable "target_namespace" {
   description = "Namespace onde o Crossplane será instalado pelo ArgoCD"
 }
 
+variable "argocd_application_name" {
+  type = string
+  default = "crossplane-bootstrap"
+}
+
+variable "argocd_application_secret_name" {
+  type = string
+  default = "gitea-repository"
+  description = "Define o nome do secret que o ArgoCD ira usar para se conectar ao git"
+}
+
 variable "git_repo_url" {
   type        = string
   description = "URL do seu repositório Git local/remoto onde estão os YAMLs do Crossplane"

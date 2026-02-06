@@ -25,5 +25,9 @@ resource "helm_release" "argocd" {
       name  = "server.extraArgs"
       value = "{--insecure}"
     },
+    {
+      name = "configs.cm.kustomize\\.buildOptions"
+      value = "--enable-helm"
+    }
   ] 
 }

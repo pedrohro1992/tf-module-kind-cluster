@@ -13,3 +13,15 @@ variable "is_cluster_gitops_control_plane" {
   type = bool
   default = false
 }
+
+variable "is_cluster_data_plane" {
+  description = "Verifica se o cluster e um data-plane"
+  type = bool
+  default = false
+}
+
+variable "crossplane_control_plane_cluster" {
+  description = "Nome do cluster onde o control-plane do crossplane esta rodando"
+  type = string
+}
+

@@ -1,6 +1,6 @@
 resource "kubernetes_secret_v1" "gitea_repo" {
   metadata {
-    name      = "gitea-repository"
+    name      = var.argocd_application_secret_name
     namespace = "argocd"
     labels = {
       "argocd.argoproj.io/secret-type" = "repository"

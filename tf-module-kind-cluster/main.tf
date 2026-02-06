@@ -9,14 +9,14 @@ resource "kind_cluster" "this" {
     node {
       role = "control-plane"
 
-      kubeadm_config_patches = [
+      kubeadm_config_patches = var.enable_ingress_ports ? [
         <<-EOF
         kind: InitConfiguration
         nodeRegistration:
           kubeletExtraArgs:
             node-labels: "ingress-ready=true"
         EOF
-      ]
+      ] : []
 
       dynamic "extra_port_mappings" {
         for_each = var.enable_ingress_ports ? [

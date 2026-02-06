@@ -3,7 +3,7 @@ resource "kubernetes_manifest" "crossplane_application" {
     apiVersion = "argoproj.io/v1alpha1"
     kind       = "Application"
     metadata = {
-      name      = "crossplane-bootstrap"
+      name      = var.argocd_application_name
       namespace = "argocd"
     }
     spec = {
