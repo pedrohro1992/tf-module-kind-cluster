@@ -16,7 +16,7 @@ resource "helm_release" "calico_operator" {
   values = [
     yamlencode({
       installation = {
-        kubernetesProvider = "kubernetes"
+        kubernetesProvider = "Kind"
 
         calicoNetwork = {
           bgp = "Disabled"

@@ -22,3 +22,8 @@ variable "nodes" {
     labels = map(string)
   }))
 }
+
+variable "pod_network_cidr" {
+  type        = string
+  description = "CIDR da rede de Pods do cluster"
+}

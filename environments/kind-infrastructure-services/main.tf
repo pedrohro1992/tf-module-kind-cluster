@@ -2,6 +2,7 @@ module "kind_infrastructure" {
   source = "../../modules/tf-module-kind-homelab"
 
   cluster_name        = "kind-infrastructure-services"
+  pod_network_cidr = "10.244.0.0/16"
   disable_default_cni = true
 
   extra_port_mappings = [
@@ -23,6 +24,20 @@ module "kind_infrastructure" {
       labels = {
         ingress-ready = "true"
         platform      = "true"
+      }
+    },
+    {
+      role = "worker"
+      labels = {
+        workload = "general"
+        tier = "application"
+      }
+    },
+    {
+      role = "worker"
+      labels = {
+        workload = "general"
+        tier = "application"
       }
     }
   ]

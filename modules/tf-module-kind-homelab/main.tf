@@ -7,6 +7,14 @@ module "kind_cluster" {
   nodes = var.nodes
 }
 
+module "calico" {
+  source = "../tf-module-network-calico"
+
+  pod_network_cidr = var.pod_network_cidr
+
+  depends_on = [ module.kind_cluster ]
+}
+
 # module "argocd" {
 #   source = "../tf-module-argocd"
 #
