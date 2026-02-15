@@ -3,6 +3,7 @@ resource "helm_release" "openebs" {
   repository       = "https://openebs.github.io/openebs"
   chart            = "openebs"
   version          = "4.1.3"
+  namespace = "openebs"
   create_namespace = true
 
   values = [
@@ -21,7 +22,7 @@ resource "helm_release" "openebs" {
         basePath = "/var/openebs"
 
         nodeSelector = {
-          "storage.openebs.io/enabled" = "true"
+          storage = "enabled"
         }
 
         resources = {
