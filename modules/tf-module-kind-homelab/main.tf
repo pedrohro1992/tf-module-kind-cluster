@@ -23,3 +23,9 @@ module "openEBS" {
 
   depends_on = [module.calico]
 }
+
+module "ingress_nginx" {
+  source = "../tf-module-ingress-nginx"
+  
+  depends_on = [ module.openEBS ]
+}
