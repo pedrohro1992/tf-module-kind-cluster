@@ -46,7 +46,36 @@ module "kind_infrastructure" {
         storage = "enabled" 
 
       }
-    }
+    },
+    {
+      role           = "worker"
+      enable_storage = true
+      labels = {
+        workload = "general"
+        tier     = "application"
+        storage = "enabled" 
+
+      }
+    },
+    {
+      role           = "worker"
+      enable_storage = false
+      labels = {
+        workload = "general"
+        tier     = "application"
+
+      }
+    },
+    {
+      role           = "worker"
+      enable_storage = false
+      labels = {
+        workload = "general"
+        tier     = "application"
+
+      }
+    },
+
   ]
 
 

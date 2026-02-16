@@ -29,3 +29,9 @@ module "ingress_nginx" {
   
   depends_on = [ module.openEBS ]
 }
+
+module "vault" {
+  source = "../tf-module-vault-core"
+
+  depends_on = [ module.ingress_nginx ]
+}
