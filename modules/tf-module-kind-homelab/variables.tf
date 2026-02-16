@@ -34,8 +34,8 @@ variable "pod_network_cidr" {
   description = "CIDR da rede de Pods do cluster"
 }
 
-
 variable "create_cluster_storage" {
   type    = bool
   default = false
 }
+

@@ -15,3 +15,8 @@ provider "kubernetes" {
   client_key             = base64decode(module.kind_cluster.client_key)
   cluster_ca_certificate = base64decode(module.kind_cluster.cluster_ca_certificate)
 }
+
+# Values to access vault is passed by the env vars VAULT_ADDR and VAULT_TOKEN
+provider "vault" {
+  
+}

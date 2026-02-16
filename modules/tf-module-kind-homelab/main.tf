@@ -35,3 +35,9 @@ module "vault" {
 
   depends_on = [ module.ingress_nginx ]
 }
+
+module "pki_vault_config" {
+  source = "../tf-module-vault-pki-config"
+
+  depends_on = [ module.vault ]
+}
