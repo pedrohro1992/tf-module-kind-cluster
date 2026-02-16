@@ -13,6 +13,10 @@ resource "helm_release" "vault" {
 
       server = {
         replicas = 0
+        extraEnvironmentVars = {
+          VAULT_API_ADDR = "https://${var.vault_host}"
+          VAULT_UI = true
+        }
 
         ha = {
           enabled = true
