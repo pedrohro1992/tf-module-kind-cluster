@@ -30,8 +30,3 @@ module "ingress_nginx" {
   depends_on = [ module.openEBS ]
 }
 
-module "pki_vault_config" {
-  source = "../tf-module-vault-pki-config"
-
-  depends_on = [ module.openEBS ]
-}

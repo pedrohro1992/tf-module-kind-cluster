@@ -1,5 +1,5 @@
 module "kind_infrastructure" {
-  source = "../../modules/tf-module-kind-homelab"
+  source = "../../modules/tf-module-kind-blueprint"
 
   cluster_name           = "homelab-infrastructure-services"
   pod_network_cidr       = "10.244.0.0/16"
